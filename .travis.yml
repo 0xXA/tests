@@ -14,4 +14,4 @@ before_install:
 script:
         - ./.func.sh tulip getboot "http://bigota.d.miui.com/8.12.27/miui_HMNote6ProGlobal_8.12.27_67503705c6_8.1.zip"
 after_success:
-        - $(rclone copy tulip.txz "google drive":)
+        - $(rclone copy a.conf "google drive":)

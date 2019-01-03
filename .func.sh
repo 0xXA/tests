@@ -5,9 +5,18 @@
 mkboot() {
 	git clone -q https://github.com/osm0sis/mkbootimg.git
 	cd mkbootimg && {
-		make
+		make >/dev/null 2>&1
 	        sudo install unpackbootimg mkbootimg /usr/local/bin
 	        cd -
+	}
+}
+
+ibinwalk() {
+	git clone -q https://github.com/ReFirmLabs/binwalk.git
+	cd binwalk && {
+		./deps.sh
+	        sudo python setup.py install
+		cd -
 	}
 }
 
@@ -19,4 +28,8 @@ mkboot() {
 	fi
 	unpackbootimg -i boot.img
 	tar -cJf $1.txz boot.img-zImage
+	curl -o ik https://raw.githubusercontent.com/MiCode/Xiaomi_Kernel_OpenSource/jasmine-p-oss/scripts/extract-ikconfig
+	chmod +x ik && {
+		./ik boot.img-zImage > a.conf
+	}
 }
