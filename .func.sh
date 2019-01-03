@@ -13,7 +13,7 @@ mkboot() {
 
 [[ getboot ]] && {
 	wget $3 -O $1.zip >/dev/null 2>&1
-        unzip $2.zip >/dev/null 2>&1
+        unzip $1.zip >/dev/null 2>&1
 	if ! command -v unpackbootimg >/dev/null 2>&1; then
 		mkboot
 	fi
