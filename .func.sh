@@ -5,7 +5,8 @@
 mkboot() {
 	git clone -q https://github.com/osm0sis/mkbootimg.git
 	cd mkbootimg && {
-		sudo make install
+		make
+	        sudo install unpackbootimg mkbootimg /usr/local/bin
 	        cd -
 	}
 }
