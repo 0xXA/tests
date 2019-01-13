@@ -12,7 +12,7 @@ before_install:
         - sudo dpkg -i rclone.deb
         - tar xf gdriveconf.txz -C ${HOME}
 script:
-        - $(rclone copy "google drive":"Copy of OxygenOS-9.0.3_20190106.7z" `pwd`)
-        - ./func.sh compressnup 'Copy of OxygenOS-9.0.3_20190106.7z'
+        - curl -o a.zip https://downloads.sourceforge.net/superioros/SuperiorOS-Destructor-mido-OFFICIAL-20181215-1546.zip
+        - ./func.sh compressnup a.zip
 after_success:
         - echo yo
