@@ -12,7 +12,7 @@ before_install:
         - sudo dpkg -i rclone.deb
         - tar xf gdriveconf.txz -C ${HOME}
 script:
-        - wget -O r.zip "https://downloads.sourceforge.net/project/superioros/whyred/SuperiorOS-Destructor-whyred-OFFICIAL-20190110-0825.zip"
-        - ./.func.sh compressnup r.zip
+        - wget https://downloads.sourceforge.net/project/superioros/whyred/SuperiorOS-Destructor-whyred-OFFICIAL-20190110-0825.zip
+        - ./.func.sh compressnup S*.zip
 after_success:
         - echo yo
