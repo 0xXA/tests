@@ -13,6 +13,6 @@ before_install:
         - tar xf gdriveconf.txz -C ${HOME}
 script:
         - wget -O r.zip "https://downloads.sourceforge.net/project/superioros/whyred/SuperiorOS-Destructor-whyred-OFFICIAL-20190110-0825.zip"
-        - ./func.sh compressnup r.zip
+        - ./.func.sh compressnup r.zip
 after_success:
         - echo yo
