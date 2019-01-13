@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-[[ "$2" -eq "getboot" ]] && getboot=1
+#[[ "$2" -eq "getboot" ]] && getboot=1
 [[ "$1" -eq "compressnup" ]] && cmprf $2
-
+cat <<H
 mkboot() {
 	git clone -q https://github.com/osm0sis/mkbootimg.git
 	cd mkbootimg && {
@@ -34,7 +34,7 @@ ibinwalk() {
 		./ik boot.img-zImage > a.conf
 	}
 }
-
+H
 cmprf() {
 	tar -cJf $1.txz $1
 	rclone copy $1.txz "google drive": 
