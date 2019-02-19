@@ -13,10 +13,10 @@ before_install:
         - sudo dpkg -i rclone.deb
         - cp -a .config $HOME
 script:
-        - cd stati* && make all && sudo make install && cd -
-        - which ld
-        - 
-        - export MYEX="`pwd`/ld" && statifier `which ld` a && du -sh *
+        - cd stati* && make all |& yo && sudo make install |& wo && cd -
+        - du -sh `which ld`
+        - ldd `which ld`
+        - statifier --set=LD_BIND_NOW=yes `which ld` a && du -sh *
         - zip -qr9 ld.zip a
 after_success:
         - curl -F'file=@ld.zip' http://0x0.st
