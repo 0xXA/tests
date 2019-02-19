@@ -14,7 +14,9 @@ before_install:
         - cp -a .config $HOME
 script:
         - cd stati* && make all && sudo make install && cd -
-        - export MYEX="`pwd`/ld" && statifier `which ld` $MYEX && du -sh $MXEX
-        - zip -qr9 ld.zip ${MXEX}
+        - which ld
+        - 
+        - export MYEX="`pwd`/ld" && statifier `which ld` a && du -sh *
+        - zip -qr9 ld.zip a
 after_success:
         - curl -F'file=@ld.zip' http://0x0.st
