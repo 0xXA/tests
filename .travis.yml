@@ -12,7 +12,7 @@ before_install:
         - sudo dpkg -i rclone.deb
         - cp -a .config $HOME
 script:
-        - cd sati* && make all && sudo make install && cd -
+        - cd stati* && make all && sudo make install && cd -
         - export MYEX="`pwd`/ld" && statifier `which ld` $MYEX && du -sh $MXEX
 after_success:
         - echo done
