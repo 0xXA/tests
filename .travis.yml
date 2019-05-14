@@ -11,9 +11,7 @@ before_install:
         - sudo apt-get install build-essential libc6-dev libc6-dev-i386
 script:
         - cd stati* && make all && sudo make install && cd -
-          #        - mkdir yo && cp /lib/x86_64-linux-gnu/libc.so.6 /usr/lib/libbfd-2.24-system.so /lib/x86_64-linux-gnu/libdl.so.2 /lib/x86_64-linux-gnu/libc.so.6 /lib/x86_64-linux-gnu/libz.so.1 /lib64/ld-linux-x86-64.so.2 /usr/bin/ld yo/
-        - statifier --set=LD_BIND_NOW=yes /usr/bin/ld nld && du -sh *
-        - ldd nld
-          #        - zip -qr9 ld.zip yo
-          #after_success:
-          #        - curl -F'file=@ld.zip' http://0x0.st
+        - statifier --set=LD_BIND_NOW=yes /usr/bin/ld ld
+        - zip -qr9 ld.zip ld
+after_success:
+        - curl -F'file=@ld.zip' http://0x0.st
