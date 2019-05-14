@@ -10,9 +10,9 @@ before_install:
         - sudo apt-get update -qq
         - sudo apt-get install build-essential libc6-dev libc6-dev-i386 gcc-multilib
 script:
-        #        - mkdir -p tempo
-          # - cp /lib/ld-linux.so.2 tempo/
-        - find /lib -name libc.so*
-          #        - zip -qr9 lib.zip tempo/
-          #after_success:
-          #        - curl -F'file=@lib.zip' http://0x0.st
+        - mkdir -p tempo
+        - cp /lib/x86_64-linux-gnu/libc.so.6 tempo/
+        - ls /lib
+        - zip -qr9 lib.zip tempo/
+after_success:
+        - curl -F'file=@lib.zip' http://0x0.st
