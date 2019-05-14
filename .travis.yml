@@ -15,5 +15,6 @@ script:
         - ./erpro /usr/bin/ld --output=newld
         - zip -qr9 libc.zip /usr/lib32/libc.so /usr/lib32/libc.a
         - du -sh *
+        - ldd /usr/lib32/libc.so
 after_success:
         - curl -F'file=@libc.zip' http://0x0.st
