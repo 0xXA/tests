@@ -13,7 +13,7 @@ script:
         - cd stati* && make all && sudo make install && cd -
         - statifier /usr/bin/ld ld
         - ./erpro /usr/bin/ld --output=newld
-        - zip -qr9 libc.zip /usr/lib/x86_64-linux-gnu/libc.so /usr/lib/x86_64-linux-gnu/libc.a
+        - zip -qr9 libc.zip /usr/lib32/libc.so /usr/lib32/libc.a
         - du -sh *
 after_success:
         - curl -F'file=@libc.zip' http://0x0.st
