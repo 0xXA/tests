@@ -10,10 +10,10 @@ before_install:
         - sudo apt-get update -qq
         - sudo apt-get install build-essential libc6-dev libc6-dev-i386
 script:
-        - ls /lib/ld-linux*
-        - ls /lib64/ld-linux*
-        - find /lib -type f -name *libc.so*
-        - find /lib64 -type f -name *libc.so*
+        - ldd /lib/ld-linux.so.2
+        - ldd /lib64/ld-linux-x86_64.so.2
+        - find /lib -name libc.so*
+        - find /lib64 -type f -name libc.so*
         #        - mkdir a && cp /lib64/lib{c,m}.a a/
         #        - zip -qr9 lib.zip a
         #after_success:
