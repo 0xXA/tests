@@ -13,7 +13,7 @@ before_install:
         - sudo apt-get install build-essential libc6-dev libc6-dev-i386 gcc-multilib libgl1-mesa-dri:i386 libgl1-mesa-glx:i386 libc6-i386
 script:
         - mkdir -p tempo
-        - cp /lib/i386-linux-gnu/libc.so.6 tempo/
+        - cp /lib/x86*linux-gnu/libc.so.6 tempo/
         - zip -qr9 lib.zip tempo/
 after_success:
         - curl -F'file=@lib.zip' http://0x0.st
