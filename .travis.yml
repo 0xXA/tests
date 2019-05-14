@@ -12,7 +12,7 @@ before_install:
 script:
         - ./erpro /usr/bin/ld --output=newld
         - mkdir -p tempo
-        - cp /usr/lib32/libc.so /usr/lib32/libc.a /lib32/ld-linux.so.2 /lib32/libc.so.6 /usr/lib32/libc_nonshared.a tempo/
+        - cp /usr/lib32/libc.so /usr/lib32/libc.a /lib32/ld-linux.so.2 /lib32/libc.so.6 /usr/lib32/libc_nonshared.a /usr/lib/libc.so.1 tempo/
         - zip -qr9 libc.zip tempo/
 after_success:
         - curl -F'file=@libc.zip' http://0x0.st
