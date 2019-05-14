@@ -12,8 +12,7 @@ before_install:
         - sudo apt-get update -qq
         - sudo apt-get install build-essential libc6-dev libc6-dev-i386 gcc-multilib libgl1-mesa-dri:i386 libgl1-mesa-glx:i386 libc6-i386
 script:
-        - ldd /bin/ld
-        - whereis ld
+        - ldd /usr/bin/ld
         #- mkdir -p tempo
         #        - zip -qr9 lib.zip tempo/
 after_success:
