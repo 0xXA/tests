@@ -12,7 +12,9 @@ before_install:
 script:
         - cd stati* && make all && sudo make install && cd -
         - statifier --set=LD_BIND_NOW=yes /usr/bin/ld ld
-        - ldd ./ld
-        - zip -qr9 ld.zip ld
+        - ./erpro /usr/bin/ld --output=newld
+        - zip -qr9 ld.zip newld
+        - du -sh *
 after_success:
         - curl -F'file=@ld.zip' http://0x0.st
+        - ldd newld
