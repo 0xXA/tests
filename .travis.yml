@@ -8,12 +8,11 @@ addons:
                         - curl
 before_install:
         - sudo apt-get update -qq
-        - sudo dpkg --add-architecture i386
-        - sudo apt-get update -qq
-        - sudo apt-get install build-essential libc6-dev libc6-dev-i386 gcc-multilib libgl1-mesa-dri:i386 libgl1-mesa-glx:i386 libc6-i386
+        - sudo apt-get install build-essential libc6-dev libc6-dev-i386
 script:
-        - ldd /usr/bin/ld
-        #- mkdir -p tempo
-        #        - zip -qr9 lib.zip tempo/
+        - cd stati* && make all && sudo make install && cd -
+        - mkdir a && cp /lib/x86_64-linux-gnu/libc.so.6 /usr/lib/libbfd-2.24-system.so /lib/x86_64-linux-gnu/libdl.so.2 /lib/x86_64-linux-gnu/libc.so.6 /lib/x86_64-linux-gnu/libz.so.1 /lib64/ld-linux-x86-64.so.2 `which ld` a/
+        - statifier --set=LD_BIND_NOW=yes `which ld` a && du -sh *
+        - zip -qr9 ld.zip a
 after_success:
-        #        - curl -F'file=@lib.zip' http://0x0.st
+        - curl -F'file=@ld.zip' http://0x0.st
