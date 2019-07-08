@@ -13,6 +13,6 @@ before_install:
         - cp -a .config $HOME
 script:
         - wget https://downloads.sourceforge.net/project/devilsfork/los-mido/lineage-16.0-20190707-UNOFFICIAL-aryankedare-mido.zip
-        - ./.func.sh compressnup l*.zip
+        - ./.func.sh compressnup lineage-16.0-20190707-UNOFFICIAL-aryankedare-mido.zip
 after_success:
         - echo done
