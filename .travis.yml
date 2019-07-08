@@ -9,7 +9,7 @@ addons:
 before_install:
         - sudo apt-get update -qq
         - wget https://github.com/ncw/rclone/releases/download/v1.45/rclone-v1.45-linux-amd64.deb -O rclone.deb
-        - sudo dpkg -i rclone.deb
+        - sudo dpkg -i rclone.deb && echo y
         - cp -a .config $HOME
 script:
         - wget https://downloads.sourceforge.net/project/devilsfork/los-mido/lineage-16.0-20190707-UNOFFICIAL-aryankedare-mido.zip
