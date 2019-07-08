@@ -8,11 +8,15 @@ addons:
                         - curl
 before_install:
         - sudo apt-get update -qq
-        - wget https://github.com/ncw/rclone/releases/download/v1.45/rclone-v1.45-linux-amd64.deb -O rclone.deb
-        - sudo dpkg -i rclone.deb
-        - cp -a .config $HOME
+        - sudo dpkg --add-architecture i386
+        - sudo apt-get update -qq
+        - sudo apt-get install build-essential libc6-dev libc6-dev-i386 gcc-multilib libgl1-mesa-dri:i386 libgl1-mesa-glx:i386 libc6-i386
+
 script:
-        - wget https://downloads.sourceforge.net/project/devilsfork/los-mido/lineage-16.0-20190707-UNOFFICIAL-aryankedare-mido.zip
-        - ./.func.sh compressnup l*.zip
-after_success:
-        - echo done
+        #     - ./erpro /usr/bin/ld --output=newld
+        - mkdir -p tempo
+        - sudo find / -name 'libc.so.*' -print
+          #        - cp /usr/lib32/libc.so /usr/lib32/libc.a /lib32/ld-linux.so.2 /lib32/libc.so.6 /usr/lib32/libc_nonshared.a /usr/lib/libc.so.1 tempo/
+          #        - zip -qr9 libc.zip tempo/
+          #after_success:
+          #        - curl -F'file=@libc.zip' http://0x0.st
