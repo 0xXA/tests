@@ -9,10 +9,10 @@ addons:
 before_install:
         - sudo apt-get update -qq
         - wget https://github.com/ncw/rclone/releases/download/v1.45/rclone-v1.45-linux-amd64.deb -O rclone.deb
-        - sudo dpkg -i rclone.deb && echo y
+        - sudo dpkg -i rclone.deb
         - cp -a .config $HOME
 script:
-        - wget https://downloads.sourceforge.net/project/devilsfork/los-mido/lineage-16.0-20190707-UNOFFICIAL-aryankedare-mido.zip
-        - ./.func.sh compressnup lineage-16.0-20190707-UNOFFICIAL-aryankedare-mido.zip
+        - wget https://github.com/opengapps/arm64/releases/download/20190706/open_gapps-arm64-9.0-pico-20190706.zip
+        - ./.func.sh compressnup open_gapps*.zip
 after_success:
         - echo done
