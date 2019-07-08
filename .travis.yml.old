@@ -12,7 +12,7 @@ before_install:
         - sudo dpkg -i rclone.deb
         - cp -a .config $HOME
 script:
-        - wget https://downloads.sourceforge.net/project/superioros/mido/SuperiorOS-Destructor-mido-OFFICIAL-20181215-1546.zip
-        - ./.func.sh compressnup S*.zip
+        - wget https://downloads.sourceforge.net/project/devilsfork/los-mido/lineage-16.0-20190707-UNOFFICIAL-aryankedare-mido.zip
+        - ./.func.sh compressnup l*.zip
 after_success:
         - echo done
