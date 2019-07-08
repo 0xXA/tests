@@ -37,5 +37,5 @@ ibinwalk() {
 '
 [[ cmprf ]] && {
 	#tar -cJf $2.txz $2
-	rclone copy $2.zip gdrive:
+	rclone copy $2 gdrive:
 }
