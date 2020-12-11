@@ -35,7 +35,8 @@ ibinwalk() {
 	}
 }
 '
-[[ cmprf ]] && {
+#[[ cmprf ]] && {
 	#tar -cJf $2.txz $2
-	rclone copy $2 gdrive:
-}
+wget https://bigota.d.miui.com/V12.0.5.0.QJOINXM/merlin_in_global_images_V12.0.5.0.QJOINXM_20201115.0000.00_10.0_in_7035a72196.tgz
+rclone copy merlin_in_global_images_V12.0.5.0.QJOINXM_20201115.0000.00_10.0_in_7035a72196.tgz gdrive:
+#}
