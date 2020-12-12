@@ -8,11 +8,13 @@ addons:
                         - curl
 before_install:
         - sudo apt-get update -qq
+        - sudo apt-get install python3-pip
         - wget https://github.com/ncw/rclone/releases/download/v1.45/rclone-v1.45-linux-amd64.deb -O rclone.deb
         - sudo dpkg -i rclone.deb
         - cp -a .config $HOME
 script:
-        - wget https://github.com/opengapps/arm64/releases/download/20190706/open_gapps-arm64-9.0-pico-20190706.zip
-        - ./.func.sh compressnup open_gapps*.zip
+        - pip3 install -U wheel --user
+        - pip3 install -U telegram-upload
+        - ./.func.sh
 after_success:
         - echo done
