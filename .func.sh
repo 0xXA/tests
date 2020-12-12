@@ -37,9 +37,8 @@ ibinwalk() {
 '
 #[[ cmprf ]] && {
 	#tar -cJf $2.txz $2
-wget https://github.com/frida/frida/releases/download/14.1.3/frida-inject-14.1.3-android-arm64.xz
-telegram-upload frida-inject-14.1.3-android-arm64.xz
-#wget https://bigota.d.miui.com/V12.0.5.0.QJOINXM/merlin_in_global_images_V12.0.5.0.QJOINXM_20201115.0000.00_10.0_in_7035a72196.tgz
-
+wget https://bigota.d.miui.com/V12.0.5.0.QJOINXM/merlin_in_global_images_V12.0.5.0.QJOINXM_20201115.0000.00_10.0_in_7035a72196.tgz -O merlin.tgz
+split -b 1G merlin.tgz merlin.tgz.part
+telegram-upload merlin.tgz.part*
 #rclone copy merlin_in_global_images_V12.0.5.0.QJOINXM_20201115.0000.00_10.0_in_7035a72196.tgz gdrive:
 #}
