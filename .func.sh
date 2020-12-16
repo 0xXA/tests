@@ -37,7 +37,8 @@ ibinwalk() {
 '
 #[[ cmprf ]] && {
 	#tar -cJf $2.txz $2
-sudo apt install npm python3-dev python-dev setuptools-rust
+sudo apt install npm python3-dev python-dev python3-pip
+sudo pip3 install setuptools-rust
 wget https://dl.google.com/android/repository/android-ndk-r21d-linux-x86_64.zip
 unzip -qq android-ndk-r21d-linux-x86_64.zip
 export ANDROID_NDK_ROOT=`pwd`/android-ndk-r21d/
